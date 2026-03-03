@@ -7,6 +7,23 @@ interface CountdownTimerProps {
   onExpire: () => void;
 }
 
+function StarIcon() {
+  return (
+    <span
+      className="inline-flex items-center justify-center shrink-0 text-[#FFBB00]"
+      style={{
+        width: 14,
+        height: 14,
+        fontSize: 10,
+        lineHeight: 1,
+        borderRadius: "0.71px",
+      }}
+    >
+      ✦
+    </span>
+  );
+}
+
 export default function CountdownTimer({ initialSeconds, onExpire }: CountdownTimerProps) {
   const [seconds, setSeconds] = useState(initialSeconds);
 
@@ -40,14 +57,14 @@ export default function CountdownTimer({ initialSeconds, onExpire }: CountdownTi
         </span>
       ) : (
         <span
-          className={`tracking-widest transition-colors ${
+          className={`tracking-widest transition-colors inline-flex items-center gap-1.5 ${
             isWarning ? "animate-blink-timer text-[#ef4444]" : "text-[#E8A04A]"
           }`}
           style={{ fontFamily: "var(--font-bebas)", fontSize: "2rem", letterSpacing: "0.12em" }}
         >
-          <span className="opacity-75 text-[0.55em] align-middle">✧</span>{" "}
-          {pad(mins)} : {pad(secs)}{" "}
-          <span className="opacity-75 text-[0.55em] align-middle">✧</span>
+          <StarIcon />
+          {pad(mins)} : {pad(secs)}
+          <StarIcon />
         </span>
       )}
     </div>

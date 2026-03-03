@@ -41,25 +41,25 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
   return (
     <>
       {/* Sticky Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#1D5B43] py-2 px-4">
-        <div className="max-w-5xl mx-auto flex justify-center">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#1D5B43] py-2 px-3 max-[320px]:px-2 sm:px-4">
+        <div className="max-w-[1920px] mx-auto flex justify-center lg:max-w-[1200px] 3xl:max-w-[1400px]">
           <CountdownTimer initialSeconds={120} onExpire={handleExpire} />
         </div>
       </header>
 
       {/* Main Content */}
       <main className="min-h-screen bg-[#232829] pt-16">
-        <div className="max-w-5xl mx-auto px-4 py-8">
+        <div className="w-full max-w-full mx-auto px-3 py-6 max-[320px]:px-2 max-[320px]:py-4 sm:px-4 md:px-6 md:py-8 lg:max-w-[1200px] 3xl:max-w-[1400px] 3xl:px-8">
           {/* Section title */}
-          <h1 className="text-white text-2xl md:text-3xl font-bold mb-8">
+          <h1 className="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-6 md:mb-8 max-[320px]:text-lg max-[320px]:mb-4">
             Выбери подходящий для себя{" "}
             <span className="text-[#E8A04A]">тариф</span>
           </h1>
 
           {/* Desktop layout */}
-          <div className="hidden md:flex gap-6 items-start">
+          <div className="hidden md:flex gap-4 lg:gap-6 items-start 3xl:gap-8">
             {/* Man image */}
-            <div className="shrink-0 w-56 lg:w-64">
+            <div className="shrink-0 w-48 md:w-52 lg:w-56 xl:w-64 3xl:w-72">
               <img
                 src={`${basePath}/img.png`}
                 alt="Fitness man"
@@ -82,7 +82,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               )}
 
               {/* Regular tariffs row */}
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2 lg:gap-3 3xl:gap-4">
                 {regularTariffs.map((tariff) => (
                   <TariffCard
                     key={tariff.id}
@@ -95,9 +95,9 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </div>
 
               {/* Hint */}
-              <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-xl p-4">
+              <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-[2rem] p-3 lg:p-4">
                 <span className="text-[#E8A04A] text-lg font-bold mt-0.5 shrink-0">!</span>
-                <p className="text-gray-200 text-base leading-relaxed">
+                <p className="text-gray-200 text-sm sm:text-base leading-relaxed max-[320px]:text-xs">
                   Следуя плану на 3 месяца и более, люди получают
                   <br />
                   <span className="font-semibold text-white">в 2 раза лучший результат, чем за 1 месяц</span>
@@ -147,7 +147,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               {/* Buy button */}
               <button
                 onClick={handleBuy}
-                className="w-full bg-[#E8A04A] hover:bg-[#d4903f] text-black font-bold text-lg py-4 rounded-xl animate-blink-button transition-colors"
+                className="w-full bg-[#E8A04A] hover:bg-[#d4903f] text-black font-bold text-base lg:text-lg py-3 lg:py-4 rounded-[2rem] animate-blink-button transition-colors"
               >
                 Купить
               </button>
@@ -158,8 +158,8 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </p>
 
               {/* Guarantee */}
-              <div className="border border-[#1D5B43] rounded-xl p-4">
-                <p className="text-[#4CAF73] text-sm font-semibold mb-2 inline-block border border-[#1D5B43] rounded-full px-3 py-1 bg-[#1D5B43]/20">
+              <div className="border border-[#81FE95] rounded-[2rem] p-4">
+                <p className="text-[#81FE95] text-sm font-semibold mb-2 inline-block border border-[#81FE95] rounded-full px-4 py-1.5 bg-[#81FE95]/10">
                   гарантия возврата 30 дней
                 </p>
                 <p className="text-gray-300 text-sm mt-3 leading-relaxed">
@@ -170,15 +170,15 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
           </div>
 
           {/* Mobile layout */}
-          <div className="flex flex-col gap-4 md:hidden">
+          <div className="flex flex-col gap-3 md:hidden max-[320px]:gap-2">
             {/* Man image - compact */}
-            <div className="flex justify-center">
+            <div className="flex justify-center max-[320px]:max-h-[180px]">
               <img
                 src={`${basePath}/img.png`}
                 alt="Fitness man"
                 width={200}
                 height={280}
-                className="object-contain"
+                className="object-contain max-[320px]:max-h-[180px] max-[375px]:max-h-[220px]"
               />
             </div>
 
@@ -204,9 +204,9 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             ))}
 
             {/* Hint */}
-            <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-xl p-4">
+            <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-[2rem] p-3 max-[320px]:p-2">
               <span className="text-[#E8A04A] text-lg font-bold mt-0.5 shrink-0">!</span>
-              <p className="text-gray-200 text-base leading-relaxed">
+              <p className="text-gray-200 text-sm leading-relaxed max-[320px]:text-xs">
                 Следуя плану на 3 месяца и более, люди получают
                 <br />
                 <span className="font-semibold text-white">в 2 раза лучший результат, чем за 1 месяц</span>
@@ -254,7 +254,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             {/* Buy button */}
             <button
               onClick={handleBuy}
-              className="w-full bg-[#E8A04A] hover:bg-[#d4903f] text-black font-bold text-lg py-4 rounded-xl animate-blink-button"
+              className="w-full bg-[#E8A04A] hover:bg-[#d4903f] text-black font-bold text-base py-3 max-[320px]:py-2.5 rounded-[2rem] animate-blink-button"
             >
               Купить
             </button>
@@ -265,8 +265,8 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             </p>
 
             {/* Guarantee */}
-            <div className="border border-[#1D5B43] rounded-xl p-4 mb-8">
-              <p className="text-[#4CAF73] text-sm font-semibold inline-block border border-[#1D5B43] rounded-full px-3 py-1 bg-[#1D5B43]/20">
+            <div className="border border-[#81FE95] rounded-[2rem] p-3 mb-6 max-[320px]:p-2 max-[320px]:mb-4">
+              <p className="text-[#81FE95] text-sm font-semibold inline-block border border-[#81FE95] rounded-full px-4 py-1.5 bg-[#81FE95]/10">
                 гарантия возврата 30 дней
               </p>
               <p className="text-gray-300 text-sm mt-3 leading-relaxed">
