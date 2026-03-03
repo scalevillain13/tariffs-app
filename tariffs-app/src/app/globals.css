@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-blink-button: blink-button 1s ease-in-out infinite;
+  --animate-blink-timer: blink-timer 0.6s ease-in-out infinite;
+}
+
+@keyframes blink-button {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes blink-timer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes price-fade-out {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes price-slide-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.price-fade-out {
+  animation: price-fade-out 0.4s ease forwards;
+}
+
+.price-slide-up {
+  animation: price-slide-up 0.5s ease 0.1s both;
+}
