@@ -82,7 +82,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               )}
 
               {/* Regular tariffs row */}
-              <div className="grid grid-cols-3 gap-2 lg:gap-3 3xl:gap-4">
+              <div className="grid grid-cols-3 gap-1.5 md:gap-2">
                 {regularTariffs.map((tariff) => (
                   <TariffCard
                     key={tariff.id}
@@ -120,13 +120,23 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                     <div
                       className={`
                         w-full h-full flex items-center justify-center rounded-[4px]
-                        ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
+                      ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
                         ${checkboxError ? "animate-pulse" : ""}
                       `}
                     >
-                      {agreed && (
-                        <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
-                      )}
+                    {agreed && (
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-4 h-4 text-[#FDB056]"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
                     </div>
                   </div>
                   <span
@@ -240,7 +250,17 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                     `}
                   >
                     {agreed && (
-                      <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-4 h-4 text-[#FDB056]"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 13l4 4L19 7" />
+                      </svg>
                     )}
                   </div>
                 </div>
@@ -260,7 +280,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                   </a>
                   &nbsp;и&nbsp;
                   <a href="#" className="underline">
-                    Политикой конфиденциальности
+                    Политикой<br />конфиденциальности
                   </a>
                 </span>
               </label>
