@@ -95,7 +95,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </div>
 
               {/* Hint */}
-              <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-[2rem] p-3 lg:p-4">
+              <div className="flex items-start gap-3 bg-[#2D3233] border border-[#2a3a2a] rounded-[2rem] p-3 lg:p-4">
                 <span className="text-[#E8A04A] text-lg font-bold mt-0.5 shrink-0">!</span>
                 <p className="text-gray-200 text-sm sm:text-base leading-relaxed max-[320px]:text-xs">
                   Следуя плану на 3 месяца и более, люди получают
@@ -210,7 +210,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             ))}
 
             {/* Hint */}
-            <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-[2rem] p-3 max-[320px]:p-2">
+            <div className="flex items-start gap-3 bg-[#2D3233] border border-[#2a3a2a] rounded-[2rem] p-3 max-[320px]:p-2">
               <span className="text-[#E8A04A] text-lg font-bold mt-0.5 shrink-0">!</span>
               <p className="text-gray-200 text-sm leading-relaxed max-[320px]:text-xs">
                 Следуя плану на 3 месяца и более, люди получают
