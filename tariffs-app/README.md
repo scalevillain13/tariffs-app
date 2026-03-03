@@ -56,7 +56,7 @@
 ```
 tariffs-app/
 ├── public/
-│   └── man.png                  # Фото спортсмена
+│   └── img.png                  # Фото спортсмена
 ├── src/
 │   ├── app/
 │   │   ├── globals.css          # Tailwind + кастомные @keyframes

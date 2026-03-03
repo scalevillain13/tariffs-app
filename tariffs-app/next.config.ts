@@ -1,11 +1,15 @@
 import type { NextConfig } from "next";
 
+const basePath = "/tariffs-app";
+
 const nextConfig: NextConfig = {
   output: "export",
-  // Замени 'tariffs-app' на точное название твоего репозитория на GitHub
-  basePath: "/tariffs-app",
+  basePath,
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

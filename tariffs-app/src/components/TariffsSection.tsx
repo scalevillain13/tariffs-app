@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import Image from "next/image";
 import { Tariff } from "@/types/tariff";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 import TariffCard from "./TariffCard";
 import TariffCardBest from "./TariffCardBest";
 import CountdownTimer from "./CountdownTimer";
@@ -59,13 +60,12 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
           <div className="hidden md:flex gap-6 items-start">
             {/* Man image */}
             <div className="shrink-0 w-56 lg:w-64">
-              <Image
-                src="/man.png"
+              <img
+                src={`${basePath}/img.png`}
                 alt="Fitness man"
                 width={256}
                 height={400}
                 className="object-contain w-full h-auto"
-                priority
               />
             </div>
 
@@ -171,13 +171,12 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
           <div className="flex flex-col gap-4 md:hidden">
             {/* Man image - compact */}
             <div className="flex justify-center">
-              <Image
-                src="/man.png"
+              <img
+                src={`${basePath}/img.png`}
                 alt="Fitness man"
                 width={200}
                 height={280}
                 className="object-contain"
-                priority
               />
             </div>
 
