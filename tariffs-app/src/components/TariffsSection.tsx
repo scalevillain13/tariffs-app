@@ -106,7 +106,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
 
               {/* Checkbox + privacy (по макету) + кнопка сразу под ним */}
               <div className="flex flex-col items-start gap-3">
-                <label className="flex items-center gap-3 cursor-pointer">
+                <label className="flex items-start gap-3 cursor-pointer max-[375px]:flex-col max-[375px]:items-start">
                   <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
                     <input
                       type="checkbox"
@@ -130,7 +130,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                     </div>
                   </div>
                   <span
-                    className="flex items-end"
+                    className="flex items-start"
                     style={{
                       fontFamily: "var(--font-montserrat)",
                       fontWeight: 400,
@@ -221,7 +221,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
 
             {/* Checkbox + privacy + кнопка сразу под ним (mobile) */}
             <div className="flex flex-col items-start gap-3">
-              <label className="flex items-center gap-3 cursor-pointer">
+              <label className="flex items-start gap-3 cursor-pointer max-[375px]:flex-col max-[375px]:items-start">
                 <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
                   <input
                     type="checkbox"
@@ -245,7 +245,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                   </div>
                 </div>
                 <span
-                  className="flex items-end"
+                  className="flex items-start"
                   style={{
                     fontFamily: "var(--font-montserrat)",
                     fontWeight: 400,
