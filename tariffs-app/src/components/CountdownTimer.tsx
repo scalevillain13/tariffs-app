@@ -40,7 +40,9 @@ export default function CountdownTimer({ initialSeconds, onExpire }: CountdownTi
         </span>
       ) : (
         <span
-          className={`tracking-widest transition-colors ${isWarning ? "animate-blink-timer" : "text-[#E8A04A]"}`}
+          className={`tracking-widest transition-colors ${
+            isWarning ? "animate-blink-timer text-[#ef4444]" : "text-[#E8A04A]"
+          }`}
           style={{ fontFamily: "var(--font-bebas)", fontSize: "2rem", letterSpacing: "0.12em" }}
         >
           ✦ {pad(mins)} : {pad(secs)} ✦
