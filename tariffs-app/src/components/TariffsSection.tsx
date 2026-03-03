@@ -158,7 +158,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </p>
 
               {/* Guarantee */}
-              <div className="rounded-[2rem] p-4">
+              <div className="border border-[#484D4E] rounded-[2rem] p-5">
                 <p className="text-[#81FE95] text-sm font-semibold mb-2 inline-block rounded-full px-4 py-1.5 bg-[#81FE95]/10">
                   гарантия возврата 30 дней
                 </p>
@@ -265,7 +265,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             </p>
 
             {/* Guarantee */}
-            <div className="rounded-[2rem] p-3 mb-6 max-[320px]:p-2 max-[320px]:mb-4">
+            <div className="border border-[#484D4E] rounded-[2rem] p-4 mb-6 max-[320px]:p-3 max-[320px]:mb-4">
               <p className="text-[#81FE95] text-sm font-semibold inline-block rounded-full px-4 py-1.5 bg-[#81FE95]/10">
                 гарантия возврата 30 дней
               </p>
