@@ -104,58 +104,59 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                 </p>
               </div>
 
-              {/* Checkbox + privacy (по макету) */}
-              <label className="flex items-center gap-3 cursor-pointer">
-                <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
-                  <input
-                    type="checkbox"
-                    checked={agreed}
-                    onChange={(e) => {
-                      setAgreed(e.target.checked);
-                      if (e.target.checked) setCheckboxError(false);
-                    }}
-                    className="sr-only"
-                  />
-                  <div
-                    className={`
-                      w-full h-full flex items-center justify-center rounded-[4px]
-                      ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
-                      ${checkboxError ? "animate-pulse" : ""}
-                    `}
-                  >
-                    {agreed && (
-                      <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
-                    )}
+              {/* Checkbox + privacy (по макету) + кнопка сразу под ним */}
+              <div className="flex flex-col items-start gap-3">
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
+                    <input
+                      type="checkbox"
+                      checked={agreed}
+                      onChange={(e) => {
+                        setAgreed(e.target.checked);
+                        if (e.target.checked) setCheckboxError(false);
+                      }}
+                      className="sr-only"
+                    />
+                    <div
+                      className={`
+                        w-full h-full flex items-center justify-center rounded-[4px]
+                        ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
+                        ${checkboxError ? "animate-pulse" : ""}
+                      `}
+                    >
+                      {agreed && (
+                        <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
+                      )}
+                    </div>
                   </div>
-                </div>
-                <span
-                  className="flex items-end"
-                  style={{
-                    fontFamily: "var(--font-montserrat)",
-                    fontWeight: 400,
-                    fontSize: 16,
-                    lineHeight: "110%",
-                    color: checkboxError ? "#f97373" : "#CDCDCD",
-                  }}
-                >
-                  Я согласен с&nbsp;
-                  <a href="#" className="underline">
-                    офертой рекуррентных платежей
-                  </a>
-                  &nbsp;и&nbsp;
-                  <a href="#" className="underline">
-                    Политикой конфиденциальности
-                  </a>
-                </span>
-              </label>
+                  <span
+                    className="flex items-end"
+                    style={{
+                      fontFamily: "var(--font-montserrat)",
+                      fontWeight: 400,
+                      fontSize: 16,
+                      lineHeight: "110%",
+                      color: checkboxError ? "#f97373" : "#CDCDCD",
+                    }}
+                  >
+                    Я согласен с&nbsp;
+                    <a href="#" className="underline">
+                      офертой рекуррентных платежей
+                    </a>
+                    &nbsp;и&nbsp;
+                    <a href="#" className="underline">
+                      Политикой конфиденциальности
+                    </a>
+                  </span>
+                </label>
 
-              {/* Buy button */}
-              <button
-                onClick={handleBuy}
-                className="w-full max-w-[352px] mx-auto flex items-center justify-center bg-[#FDB056] hover:bg-[#f5a845] text-black font-bold text-base lg:text-lg py-5 px-[60px] rounded-[20px] animate-blink-button transition-colors"
-              >
-                Купить
-              </button>
+                <button
+                  onClick={handleBuy}
+                  className="w-full max-w-[352px] flex items-center justify-center bg-[#FDB056] hover:bg-[#f5a845] text-black font-bold text-base lg:text-lg py-5 px-[60px] rounded-[20px] animate-blink-button transition-colors"
+                >
+                  Купить
+                </button>
+              </div>
 
               {/* Fine print */}
               <p className="text-gray-500 text-xs leading-relaxed">
@@ -218,58 +219,59 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </p>
             </div>
 
-            {/* Checkbox + privacy (по макету) */}
-            <label className="flex items-center gap-3 cursor-pointer">
-              <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
-                <input
-                  type="checkbox"
-                  checked={agreed}
-                  onChange={(e) => {
-                    setAgreed(e.target.checked);
-                    if (e.target.checked) setCheckboxError(false);
-                  }}
-                  className="sr-only"
-                />
-                <div
-                  className={`
-                    w-full h-full flex items-center justify-center rounded-[4px]
-                    ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
-                    ${checkboxError ? "animate-pulse" : ""}
-                  `}
-                >
-                  {agreed && (
-                    <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
-                  )}
+            {/* Checkbox + privacy + кнопка сразу под ним (mobile) */}
+            <div className="flex flex-col items-start gap-3">
+              <label className="flex items-center gap-3 cursor-pointer">
+                <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
+                  <input
+                    type="checkbox"
+                    checked={agreed}
+                    onChange={(e) => {
+                      setAgreed(e.target.checked);
+                      if (e.target.checked) setCheckboxError(false);
+                    }}
+                    className="sr-only"
+                  />
+                  <div
+                    className={`
+                      w-full h-full flex items-center justify-center rounded-[4px]
+                      ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
+                      ${checkboxError ? "animate-pulse" : ""}
+                    `}
+                  >
+                    {agreed && (
+                      <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
+                    )}
+                  </div>
                 </div>
-              </div>
-              <span
-                className="flex items-end"
-                style={{
-                  fontFamily: "var(--font-montserrat)",
-                  fontWeight: 400,
-                  fontSize: 16,
-                  lineHeight: "110%",
-                  color: checkboxError ? "#f97373" : "#CDCDCD",
-                }}
-              >
-                Я согласен с&nbsp;
-                <a href="#" className="underline">
-                  офертой рекуррентных платежей
-                </a>
-                &nbsp;и&nbsp;
-                <a href="#" className="underline">
-                  Политикой конфиденциальности
-                </a>
-              </span>
-            </label>
+                <span
+                  className="flex items-end"
+                  style={{
+                    fontFamily: "var(--font-montserrat)",
+                    fontWeight: 400,
+                    fontSize: 16,
+                    lineHeight: "110%",
+                    color: checkboxError ? "#f97373" : "#CDCDCD",
+                  }}
+                >
+                  Я согласен с&nbsp;
+                  <a href="#" className="underline">
+                    офертой рекуррентных платежей
+                  </a>
+                  &nbsp;и&nbsp;
+                  <a href="#" className="underline">
+                    Политикой конфиденциальности
+                  </a>
+                </span>
+              </label>
 
-            {/* Buy button */}
-            <button
-              onClick={handleBuy}
-              className="w-full max-w-[352px] mx-auto flex items-center justify-center bg-[#FDB056] hover:bg-[#f5a845] text-black font-bold text-base py-5 px-[60px] max-[320px]:py-4 max-[320px]:px-8 rounded-[20px] animate-blink-button"
-            >
-              Купить
-            </button>
+              <button
+                onClick={handleBuy}
+                className="w-full max-w-[352px] flex items-center justify-center bg-[#FDB056] hover:bg-[#f5a845] text-black font-bold text-base py-5 px-[60px] max-[320px]:py-4 max-[320px]:px-8 rounded-[20px] animate-blink-button"
+              >
+                Купить
+              </button>
+            </div>
 
             {/* Fine print */}
             <p className="text-gray-500 text-xs leading-relaxed">
