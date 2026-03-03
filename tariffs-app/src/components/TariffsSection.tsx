@@ -2,11 +2,11 @@
 
 import { useState, useCallback } from "react";
 import { Tariff } from "@/types/tariff";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 import TariffCard from "./TariffCard";
 import TariffCardBest from "./TariffCardBest";
 import CountdownTimer from "./CountdownTimer";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 interface TariffsSectionProps {
   tariffs: Tariff[];
@@ -48,7 +48,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
       </header>
 
       {/* Main Content */}
-      <main className="min-h-screen bg-[#1a2a1a] pt-16">
+      <main className="min-h-screen bg-[#232829] pt-16">
         <div className="max-w-5xl mx-auto px-4 py-8">
           {/* Section title */}
           <h1 className="text-white text-2xl md:text-3xl font-bold mb-8">

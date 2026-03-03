@@ -28,18 +28,20 @@ export default function CountdownTimer({ initialSeconds, onExpire }: CountdownTi
 
   return (
     <div className="flex flex-col items-center gap-0.5">
-      <span className="text-white text-sm font-medium leading-tight">
+      <span className="text-white text-sm font-medium leading-tight tracking-wide">
         Успейте открыть пробную неделю
       </span>
       {isExpired ? (
-        <span className="text-gray-400 text-base font-bold tracking-widest">
-          Время вышло
+        <span
+          className="text-gray-400 tracking-widest"
+          style={{ fontFamily: "var(--font-bebas)", fontSize: "1.6rem", letterSpacing: "0.15em" }}
+        >
+          ВРЕМЯ ВЫШЛО
         </span>
       ) : (
         <span
-          className={`text-base font-bold tracking-widest transition-colors ${
-            isWarning ? "animate-blink-timer" : "text-[#E8A04A]"
-          }`}
+          className={`tracking-widest transition-colors ${isWarning ? "animate-blink-timer" : "text-[#E8A04A]"}`}
+          style={{ fontFamily: "var(--font-bebas)", fontSize: "2rem", letterSpacing: "0.12em" }}
         >
           ✦ {pad(mins)} : {pad(secs)} ✦
         </span>
