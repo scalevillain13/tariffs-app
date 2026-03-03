@@ -34,12 +34,21 @@ export default function TariffCardBest({
         }
       `}
     >
-      {/* Badges row */}
-      <div className="flex items-center gap-2 mb-3">
-        <span className="bg-[#E05C3A] text-white text-xs font-bold px-2 py-0.5 rounded">
-          -{discount}%
-        </span>
-        <span className="ml-auto text-[#E8A04A] text-xs font-bold uppercase tracking-wide border border-[#E8A04A] px-2 py-0.5 rounded">
+      {/* Discount badge (как на макете) */}
+      <div className="absolute -top-[1px] left-[51px] z-[1]">
+        <div className="flex items-center justify-center px-2 py-[5px] bg-[#FD5656] rounded-b-[8px]">
+          <span
+            className="text-white leading-[130%]"
+            style={{ fontFamily: "var(--font-montserrat)", fontWeight: 500, fontSize: 22 }}
+          >
+            -{discount}%
+          </span>
+        </div>
+      </div>
+
+      {/* Хит бейдж */}
+      <div className="flex items-center justify-end mb-4">
+        <span className="text-[#E8A04A] text-xs font-bold uppercase tracking-wide border border-[#E8A04A] px-2 py-0.5 rounded">
           хит!
         </span>
       </div>

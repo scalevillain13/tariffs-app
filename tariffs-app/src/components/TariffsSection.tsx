@@ -104,11 +104,9 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                 </p>
               </div>
 
-              {/* Checkbox */}
-              <label
-                className={`flex items-start gap-3 cursor-pointer group`}
-              >
-                <div className="relative mt-0.5 shrink-0">
+              {/* Checkbox + privacy (по макету) */}
+              <label className="flex items-center gap-3 cursor-pointer">
+                <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
                   <input
                     type="checkbox"
                     checked={agreed}
@@ -120,27 +118,34 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                   />
                   <div
                     className={`
-                      w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-300
-                      ${agreed
-                        ? "bg-[#1D5B43] border-[#1D5B43]"
-                        : checkboxError
-                          ? "border-red-500 animate-pulse bg-red-500/10"
-                          : "border-gray-500 group-hover:border-gray-400"
-                      }
+                      w-full h-full flex items-center justify-center rounded-[4px]
+                      ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
+                      ${checkboxError ? "animate-pulse" : ""}
                     `}
                   >
                     {agreed && (
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
+                      <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
                     )}
                   </div>
                 </div>
-                <span className={`text-sm transition-colors ${checkboxError ? "text-red-400" : "text-gray-400"}`}>
-                  Я согласен с{" "}
-                  <a href="#" className="text-gray-300 underline hover:text-white">офертой рекуррентных платежей</a>
-                  {" "}и{" "}
-                  <a href="#" className="text-gray-300 underline hover:text-white">Политикой конфиденциальности</a>
+                <span
+                  className="flex items-end"
+                  style={{
+                    fontFamily: "var(--font-montserrat)",
+                    fontWeight: 400,
+                    fontSize: 16,
+                    lineHeight: "110%",
+                    color: checkboxError ? "#f97373" : "#CDCDCD",
+                  }}
+                >
+                  Я согласен с&nbsp;
+                  <a href="#" className="underline">
+                    офертой рекуррентных платежей
+                  </a>
+                  &nbsp;и&nbsp;
+                  <a href="#" className="underline">
+                    Политикой конфиденциальности
+                  </a>
                 </span>
               </label>
 
@@ -213,9 +218,9 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </p>
             </div>
 
-            {/* Checkbox */}
-            <label className="flex items-start gap-3 cursor-pointer group">
-              <div className="relative mt-0.5 shrink-0">
+            {/* Checkbox + privacy (по макету) */}
+            <label className="flex items-center gap-3 cursor-pointer">
+              <div className="relative shrink-0" style={{ width: 32, height: 32 }}>
                 <input
                   type="checkbox"
                   checked={agreed}
@@ -227,27 +232,34 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
                 />
                 <div
                   className={`
-                    w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-300
-                    ${agreed
-                      ? "bg-[#1D5B43] border-[#1D5B43]"
-                      : checkboxError
-                        ? "border-red-500 animate-pulse bg-red-500/10"
-                        : "border-gray-500 group-hover:border-gray-400"
-                    }
+                    w-full h-full flex items-center justify-center rounded-[4px]
+                    ${agreed ? "bg-[#424748] border border-[#FDB056]" : "bg-[#606566] border border-transparent"}
+                    ${checkboxError ? "animate-pulse" : ""}
                   `}
                 >
                   {agreed && (
-                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <div className="w-3.5 h-3.5" style={{ background: "#FDB056" }} />
                   )}
                 </div>
               </div>
-              <span className={`text-sm transition-colors ${checkboxError ? "text-red-400" : "text-gray-400"}`}>
-                Я согласен с{" "}
-                <a href="#" className="text-gray-300 underline">офертой рекуррентных платежей</a>
-                {" "}и{" "}
-                <a href="#" className="text-gray-300 underline">Политикой конфиденциальности</a>
+              <span
+                className="flex items-end"
+                style={{
+                  fontFamily: "var(--font-montserrat)",
+                  fontWeight: 400,
+                  fontSize: 16,
+                  lineHeight: "110%",
+                  color: checkboxError ? "#f97373" : "#CDCDCD",
+                }}
+              >
+                Я согласен с&nbsp;
+                <a href="#" className="underline">
+                  офертой рекуррентных платежей
+                </a>
+                &nbsp;и&nbsp;
+                <a href="#" className="underline">
+                  Политикой конфиденциальности
+                </a>
               </span>
             </label>
 

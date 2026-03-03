@@ -38,10 +38,15 @@ export default function TariffCard({
       style={{ minHeight: 335, maxWidth: 240 }}
     >
       {/* Discount badge */}
-      <div className="absolute top-[-12px] left-1/2 -translate-x-1/2">
-        <span className="bg-[#E05C3A] text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
-          -{discount}%
-        </span>
+      <div className="absolute -top-[1px] left-[51px] z-[1]">
+        <div className="flex items-center justify-center px-2 py-[5px] bg-[#FD5656] rounded-b-[8px]">
+          <span
+            className="text-white leading-[130%]"
+            style={{ fontFamily: "var(--font-montserrat)", fontWeight: 500, fontSize: 22 }}
+          >
+            -{discount}%
+          </span>
+        </div>
       </div>
 
       {/* Content block (по макету) */}
@@ -69,10 +74,10 @@ export default function TariffCard({
             {/* Новая цена */}
             <div style={{ width: 168, height: 50 }}>
               <span
-                className="text-white"
+                className="text-white whitespace-nowrap"
                 style={{ fontWeight: 600, fontSize: 50, lineHeight: "100%" }}
               >
-                {tariff.price.toLocaleString("ru-RU")} ₽
+                {tariff.price.toLocaleString("ru-RU")}&nbsp;₽
               </span>
             </div>
             {/* Старая цена с линией */}
@@ -90,7 +95,7 @@ export default function TariffCard({
                   color: "#919191",
                 }}
               >
-                {tariff.full_price.toLocaleString("ru-RU")} ₽
+                {tariff.full_price.toLocaleString("ru-RU")}&nbsp;₽
               </span>
               <span
                 style={{
