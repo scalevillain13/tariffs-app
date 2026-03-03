@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tariffs App — Страница выбора тарифа
 
-## Getting Started
+> Тестовое задание: адаптивная страница выбора тарифа с таймером обратного отсчёта, анимациями и получением данных от API.
 
-First, run the development server:
+**Стек:** Next.js 16 · React 19 · TypeScript · Tailwind CSS v4
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Краткое описание
+
+Страница выбора тарифа для фитнес-приложения. Данные тарифов загружаются с внешнего API. Реализован sticky-хедер с обратным отсчётом (2 минуты), при истечении которого скидочные цены анимированно заменяются полными. Поддерживаются десктопная и мобильная раскладки, выбор тарифа с подсветкой, мигающая кнопка покупки и валидация чекбокса.
+
+---
+
+## Полное описание
+
+### О проекте
+
+Тестовое задание для портфолио. Задача — сверстать страницу выбора тарифа по дизайн-макету (Figma), интегрировать с реальным REST API, реализовать интерактивные состояния и анимации.
+
+### Функциональность
+
+#### Тарифы
+- Данные загружаются с `https://t-core.fit-hub.pro/Test/GetTariffs` через Next.js Server Component
+- Тариф с `is_best: true` отображается крупной карточкой с бейджем «хит!» и выбирается по умолчанию
+- Процент скидки рассчитывается автоматически: `Math.round((1 - price / full_price) * 100)`
+- Клик по карточке — мгновенное переключение выбора с подсветкой золотой рамкой и glow-эффектом
+
+#### Таймер
+- Sticky-хедер с обратным отсчётом **2 минуты**, закреплён поверх страницы
+- При остатке **≤ 30 секунд** таймер начинает мигать красным цветом
+- По истечении времени срабатывает **анимация смены цен**: скидочная цена уходит вверх с fade-out (400ms), затем полная цена появляется снизу с fade-in (500ms)
+
+#### Кнопка «Купить»
+- Постоянная анимация мигания (`blink-button` keyframe, без CSS transition)
+- При нажатии без отмеченного чекбокса — чекбокс и текст подсвечиваются красным на 2 секунды
+- При корректном нажатии — подтверждение покупки выбранного тарифа
+
+#### Адаптивность
+- **Десктоп** — фото накачанного мужчины слева, крупная карточка «Навсегда» сверху, три тарифа в сетке 3 колонки
+- **Мобильный** — фото сверху по центру, все тарифы в столбик
+
+### Технические решения
+
+| Задача | Решение |
+|---|---|
+| Получение данных | `fetch` в Server Component + fallback-данные при ошибке API |
+| Состояние | `useState`, `useCallback` — без лишних библиотек |
+| Анимации | CSS `@keyframes` через Tailwind v4 `@theme` директиву |
+| Анимация цен | Двухфазный crossfade: fade-out → slide-up |
+| Таймер | `setTimeout` рекурсия, без `setInterval` для точности |
+| Адаптив | Tailwind breakpoint `md:` для переключения раскладок |
+
+### Структура проекта
+
+```
+tariffs-app/
+├── public/
+│   └── man.png                  # Фото спортсмена
+├── src/
+│   ├── app/
+│   │   ├── globals.css          # Tailwind + кастомные @keyframes
+│   │   ├── layout.tsx           # Root layout с Inter (Cyrillic)
+│   │   └── page.tsx             # Server component, запрос к API
+│   ├── components/
+│   │   ├── TariffsSection.tsx   # Главный клиентский компонент
+│   │   ├── TariffCard.tsx       # Карточка обычного тарифа
+│   │   ├── TariffCardBest.tsx   # Карточка лучшего тарифа (is_best)
+│   │   ├── PriceDisplay.tsx     # Анимированный компонент цены
+│   │   └── CountdownTimer.tsx   # Таймер обратного отсчёта
+│   └── types/
+│       └── tariff.ts            # TypeScript интерфейс Tariff
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Запуск
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Установка зависимостей
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Режим разработки → http://localhost:3000
+npm run dev
 
-## Learn More
+# Продакшн-сборка
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+GET https://t-core.fit-hub.pro/Test/GetTariffs
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Пример ответа:
+```json
+[
+  {
+    "id": "f347d050-073c-4969-ae91-7346f935cf70",
+    "period": "1 неделя",
+    "price": 149,
+    "full_price": 999,
+    "is_best": false,
+    "text": "Чтобы просто начать"
+  }
+]
+```
 
-## Deploy on Vercel
+### Скриншоты
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Десктоп | Мобильный |
+|---|---|
+| Крупная карточка «Навсегда» + 3 тарифа в сетке | Все тарифы в столбик |
+| Таймер в хедере (золотой → красный мигающий) | Адаптивная типографика |
