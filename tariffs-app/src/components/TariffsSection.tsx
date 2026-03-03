@@ -147,7 +147,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               {/* Buy button */}
               <button
                 onClick={handleBuy}
-                className="w-full bg-[#E8A04A] hover:bg-[#d4903f] text-black font-bold text-base lg:text-lg py-3 lg:py-4 rounded-[2rem] animate-blink-button transition-colors"
+                className="w-full max-w-[352px] mx-auto flex items-center justify-center bg-[#FDB056] hover:bg-[#f5a845] text-black font-bold text-base lg:text-lg py-5 px-[60px] rounded-[20px] animate-blink-button transition-colors"
               >
                 Купить
               </button>
@@ -158,8 +158,8 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </p>
 
               {/* Guarantee */}
-              <div className="border border-[#81FE95] rounded-[2rem] p-4">
-                <p className="text-[#81FE95] text-sm font-semibold mb-2 inline-block border border-[#81FE95] rounded-full px-4 py-1.5 bg-[#81FE95]/10">
+              <div className="rounded-[2rem] p-4">
+                <p className="text-[#81FE95] text-sm font-semibold mb-2 inline-block rounded-full px-4 py-1.5 bg-[#81FE95]/10">
                   гарантия возврата 30 дней
                 </p>
                 <p className="text-gray-300 text-sm mt-3 leading-relaxed">
@@ -254,7 +254,7 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             {/* Buy button */}
             <button
               onClick={handleBuy}
-              className="w-full bg-[#E8A04A] hover:bg-[#d4903f] text-black font-bold text-base py-3 max-[320px]:py-2.5 rounded-[2rem] animate-blink-button"
+              className="w-full max-w-[352px] mx-auto flex items-center justify-center bg-[#FDB056] hover:bg-[#f5a845] text-black font-bold text-base py-5 px-[60px] max-[320px]:py-4 max-[320px]:px-8 rounded-[20px] animate-blink-button"
             >
               Купить
             </button>
@@ -265,8 +265,8 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             </p>
 
             {/* Guarantee */}
-            <div className="border border-[#81FE95] rounded-[2rem] p-3 mb-6 max-[320px]:p-2 max-[320px]:mb-4">
-              <p className="text-[#81FE95] text-sm font-semibold inline-block border border-[#81FE95] rounded-full px-4 py-1.5 bg-[#81FE95]/10">
+            <div className="rounded-[2rem] p-3 mb-6 max-[320px]:p-2 max-[320px]:mb-4">
+              <p className="text-[#81FE95] text-sm font-semibold inline-block rounded-full px-4 py-1.5 bg-[#81FE95]/10">
                 гарантия возврата 30 дней
               </p>
               <p className="text-gray-300 text-sm mt-3 leading-relaxed">

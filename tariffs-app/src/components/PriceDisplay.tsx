@@ -7,6 +7,7 @@ interface PriceDisplayProps {
   fullPrice: number;
   timerExpired: boolean;
   largeText?: boolean;
+  priceColor?: "white" | "orange";
 }
 
 export default function PriceDisplay({
@@ -14,6 +15,7 @@ export default function PriceDisplay({
   fullPrice,
   timerExpired,
   largeText = false,
+  priceColor = "orange",
 }: PriceDisplayProps) {
   const [showDiscount, setShowDiscount] = useState(true);
   const [animating, setAnimating] = useState(false);
@@ -47,9 +49,11 @@ export default function PriceDisplay({
     );
   }
 
+  const priceColorClass = priceColor === "white" ? "text-white" : "text-[#E8A04A]";
+
   return (
     <div className={`flex items-baseline gap-2 flex-wrap transition-opacity duration-400 ${animating ? "opacity-0" : "opacity-100"}`}>
-      <span className={`text-[#E8A04A] ${priceClass}`}>
+      <span className={`${priceColorClass} ${priceClass}`}>
         {price.toLocaleString("ru-RU")} ₽
       </span>
       <span className={strikeClass}>

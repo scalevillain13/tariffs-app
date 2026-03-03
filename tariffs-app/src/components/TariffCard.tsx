@@ -26,10 +26,11 @@ export default function TariffCard({
     <div
       onClick={onClick}
       className={`
-        relative cursor-pointer rounded-[2rem] border-2 p-3 sm:p-4 transition-all duration-300 max-[320px]:p-2
+        relative cursor-pointer rounded-[40px] border-2 transition-all duration-300
+        pt-[40px] sm:pt-[50px] pr-5 pb-6 pl-5 max-[320px]:pt-8 max-[320px]:pr-3 max-[320px]:pb-4 max-[320px]:pl-3
         ${isSelected
-          ? "border-[#E8A04A] bg-[#2c3030] shadow-[0_0_12px_rgba(232,160,74,0.25)]"
-          : "border-[#3a3a3a] bg-[#2c3030] hover:border-[#505a50]"
+          ? "border-[#E8A04A] bg-[#313637] shadow-[0_0_12px_rgba(232,160,74,0.25)]"
+          : "border-[#3a3a3a] bg-[#313637] hover:border-[#505a50]"
         }
       `}
     >
@@ -47,6 +48,7 @@ export default function TariffCard({
             price={tariff.price}
             fullPrice={tariff.full_price}
             timerExpired={timerExpired}
+            priceColor="white"
           />
         </div>
 
