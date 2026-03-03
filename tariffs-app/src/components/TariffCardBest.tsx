@@ -30,7 +30,7 @@ export default function TariffCardBest({
         p-5 sm:p-6 max-[320px]:p-4
         ${isSelected
           ? "border-[#E8A04A] bg-[#313637] shadow-[0_0_20px_rgba(232,160,74,0.2)]"
-          : "border-[#3a3a3a] bg-[#313637] hover:border-[#505a50]"
+          : "border-[#484D4E] bg-[#313637] hover:border-[#606668]"
         }
       `}
     >
@@ -45,27 +45,15 @@ export default function TariffCardBest({
       </div>
 
       <div className="flex justify-between items-start gap-4">
-        <div className="flex-1">
-          <p className="text-white font-bold text-xl mb-2">{tariff.period}</p>
+        <div className="flex-1" style={{ fontFamily: "var(--font-montserrat)" }}>
+          <p className="text-white font-medium text-2xl mb-3">{tariff.period}</p>
           <PriceDisplay
             price={tariff.price}
             fullPrice={tariff.full_price}
             timerExpired={timerExpired}
             largeText
+            priceColor="white"
           />
-        </div>
-
-        {/* Radio indicator */}
-        <div
-          className={`
-            w-6 h-6 rounded-full border-2 flex items-center justify-center mt-1 shrink-0
-            transition-all duration-300
-            ${isSelected ? "border-[#E8A04A]" : "border-gray-600"}
-          `}
-        >
-          {isSelected && (
-            <div className="w-3 h-3 rounded-full bg-[#E8A04A]" />
-          )}
         </div>
       </div>
 
