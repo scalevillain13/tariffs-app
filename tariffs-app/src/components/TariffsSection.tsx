@@ -95,10 +95,12 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
               </div>
 
               {/* Hint */}
-              <div className="flex items-start gap-2 bg-[#1e2a1e] border border-[#2a3a2a] rounded-xl p-3">
-                <span className="text-[#E8A04A] mt-0.5 shrink-0">!</span>
-                <p className="text-gray-300 text-sm">
-                  Следуя плану на 3 месяца и более, люди получают в 2 раза лучший результат, чем за 1 месяц
+              <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-xl p-4">
+                <span className="text-[#E8A04A] text-lg font-bold mt-0.5 shrink-0">!</span>
+                <p className="text-gray-200 text-base leading-relaxed">
+                  Следуя плану на 3 месяца и более, люди получают
+                  <br />
+                  <span className="font-semibold text-white">в 2 раза лучший результат, чем за 1 месяц</span>
                 </p>
               </div>
 
@@ -202,10 +204,12 @@ export default function TariffsSection({ tariffs }: TariffsSectionProps) {
             ))}
 
             {/* Hint */}
-            <div className="flex items-start gap-2 bg-[#1e2a1e] border border-[#2a3a2a] rounded-xl p-3">
-              <span className="text-[#E8A04A] mt-0.5 shrink-0">!</span>
-              <p className="text-gray-300 text-sm">
-                Следуя плану на 3 месяца и более, люди получают в 2 раза лучший результат, чем за 1 месяц
+            <div className="flex items-start gap-3 bg-[#232829] border border-[#2a3a2a] rounded-xl p-4">
+              <span className="text-[#E8A04A] text-lg font-bold mt-0.5 shrink-0">!</span>
+              <p className="text-gray-200 text-base leading-relaxed">
+                Следуя плану на 3 месяца и более, люди получают
+                <br />
+                <span className="font-semibold text-white">в 2 раза лучший результат, чем за 1 месяц</span>
               </p>
             </div>
 

@@ -4,6 +4,8 @@
 
 **Стек:** Next.js 16 · React 19 · TypeScript · Tailwind CSS v4
 
+**Демо:** [GitHub Pages](https://scalevillain13.github.io/tariffs-app/)
+
 ---
 
 ## Краткое описание
@@ -37,7 +39,7 @@
 - При корректном нажатии — подтверждение покупки выбранного тарифа
 
 #### Адаптивность
-- **Десктоп** — фото накачанного мужчины слева, крупная карточка «Навсегда» сверху, три тарифа в сетке 3 колонки
+- **Десктоп** — фото спортсмена слева, крупная карточка «Навсегда» сверху, три тарифа в сетке 3 колонки
 - **Мобильный** — фото сверху по центру, все тарифы в столбик
 
 ### Технические решения
@@ -50,26 +52,32 @@
 | Анимация цен | Двухфазный crossfade: fade-out → slide-up |
 | Таймер | `setTimeout` рекурсия, без `setInterval` для точности |
 | Адаптив | Tailwind breakpoint `md:` для переключения раскладок |
+| Деплой | Static export + GitHub Actions → GitHub Pages |
 
 ### Структура проекта
 
 ```
 tariffs-app/
+├── .github/workflows/
+│   └── deploy.yml              # GitHub Actions: build → Pages
 ├── public/
-│   └── img.png                  # Фото спортсмена
+│   └── img.png                 # Фото спортсмена (оптимизировано)
+├── scripts/
+│   └── optimize-image.mjs      # Обрезка и сжатие изображения
 ├── src/
 │   ├── app/
-│   │   ├── globals.css          # Tailwind + кастомные @keyframes
-│   │   ├── layout.tsx           # Root layout с Inter (Cyrillic)
-│   │   └── page.tsx             # Server component, запрос к API
+│   │   ├── globals.css         # Tailwind + кастомные @keyframes
+│   │   ├── layout.tsx          # Root layout с Inter (Cyrillic)
+│   │   └── page.tsx            # Server component, запрос к API
 │   ├── components/
-│   │   ├── TariffsSection.tsx   # Главный клиентский компонент
-│   │   ├── TariffCard.tsx       # Карточка обычного тарифа
-│   │   ├── TariffCardBest.tsx   # Карточка лучшего тарифа (is_best)
-│   │   ├── PriceDisplay.tsx     # Анимированный компонент цены
-│   │   └── CountdownTimer.tsx   # Таймер обратного отсчёта
+│   │   ├── TariffsSection.tsx  # Главный клиентский компонент
+│   │   ├── TariffCard.tsx      # Карточка обычного тарифа
+│   │   ├── TariffCardBest.tsx  # Карточка лучшего тарифа (is_best)
+│   │   ├── PriceDisplay.tsx    # Анимированный компонент цены
+│   │   └── CountdownTimer.tsx  # Таймер обратного отсчёта
 │   └── types/
-│       └── tariff.ts            # TypeScript интерфейс Tariff
+│       └── tariff.ts           # TypeScript интерфейс Tariff
+├── next.config.ts              # output: export, basePath для Pages
 └── package.json
 ```
 
@@ -79,13 +87,21 @@ tariffs-app/
 # Установка зависимостей
 npm install
 
-# Режим разработки → http://localhost:3000
+# Режим разработки
 npm run dev
+# → http://localhost:3000/tariffs-app/
 
-# Продакшн-сборка
+# Продакшн-сборка (статический экспорт)
 npm run build
-npm run start
+# Результат в папке out/
 ```
+
+### Деплой на GitHub Pages
+
+При пуше в `main` GitHub Actions автоматически собирает проект и деплоит на Pages.
+
+- **URL:** `https://<username>.github.io/tariffs-app/`
+- Workflow: `.github/workflows/deploy.yml` (в корне репозитория)
 
 ### API
 
