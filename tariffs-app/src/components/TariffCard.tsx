@@ -26,7 +26,7 @@ export default function TariffCard({
     <div
       onClick={onClick}
       className={`
-        relative cursor-pointer rounded-xl border-2 p-4 transition-all duration-300
+        relative cursor-pointer rounded-[2rem] border-2 p-4 transition-all duration-300
         ${isSelected
           ? "border-[#E8A04A] bg-[#2c3030] shadow-[0_0_12px_rgba(232,160,74,0.25)]"
           : "border-[#3a3a3a] bg-[#2c3030] hover:border-[#505a50]"

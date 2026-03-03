@@ -45,7 +45,9 @@ export default function CountdownTimer({ initialSeconds, onExpire }: CountdownTi
           }`}
           style={{ fontFamily: "var(--font-bebas)", fontSize: "2rem", letterSpacing: "0.12em" }}
         >
-          ✦ {pad(mins)} : {pad(secs)} ✦
+          <span className="opacity-75 text-[0.55em] align-middle">✧</span>{" "}
+          {pad(mins)} : {pad(secs)}{" "}
+          <span className="opacity-75 text-[0.55em] align-middle">✧</span>
         </span>
       )}
     </div>
