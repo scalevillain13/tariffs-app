@@ -61,7 +61,6 @@ export default function TariffCardBest({
             fullPrice={tariff.full_price}
             timerExpired={timerExpired}
             largeText
-            priceColor="white"
           />
         </div>
       </div>
